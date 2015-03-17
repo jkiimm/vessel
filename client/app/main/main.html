@@ -1,0 +1,51 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<div class="container" ng-controller="MainCtrl">
+
+  <div class="jumbotron">
+    <h1>단어 추가</h1>
+
+    <form>
+      <div class="form-group">
+        <div class="text-left">
+          <label for="word-a">언어 A</label>
+        </div>
+        <div class="input-wrapper">
+          <select class="form-control" ng-model="wordASelected" ng-options="lang as lang.label for lang in languages">
+          </select>
+        </div>
+        <div class="input-wrapper">
+          <input type="text" class="form-control" id="word-a" placeholder="단어를 입력하세요" ng-model="wordA">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="text-left">
+          <label for="word-b">언어 B</label>
+        </div>
+        <div class="input-wrapper">
+          <select class="form-control" ng-model="wordBSelected" ng-options="lang as lang.label for lang in languages">
+          </select>
+        </div>
+        <div class="input-wrapper">
+          <input type="text" class="form-control" id="word-b" placeholder="단어를 입력하세요" ng-model="wordB">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="addWord()">추가</button>
+    </form>
+  </div><!-- /.jumbotron -->
+
+  <div class="jumbotron" ng-repeat="voca in wordsInVessel">
+    <p class="word" ng-repeat="unit in voca.pair">{{unit.word}}</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>Angular Fullstack v2.0.13 |
+      <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+      <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>
