@@ -4,7 +4,6 @@ angular.module('vesselApp').controller('MainCtrl', function ($scope, $http, sock
   $scope.wordsInVessel = [];
 
   $http.get('/api/vocas').success(function(wordsInVessel) {
-    console.log(wordsInVessel);
     $scope.wordsInVessel = wordsInVessel;
     socket.syncUpdates('voca', $scope.wordsInVessel);
   });
