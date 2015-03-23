@@ -4,9 +4,25 @@
   <a role="button" id="quit-stage" class="btn btn-default" href="/"><span class="glyphicon glyphicon-log-out"></span></a>
 
   <div class="cards">
+    <div class="flip-container" ng-repeat="voca in wordsInVessel">
+      <div class="flipper">
+        <div class="face front">
+          <div>
+            {{voca.pair[0].word}}
+          </div>
+        </div>
+        <div class="face back">
+          <div>
+            {{voca.pair[1].word}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
     <div class="jumbotron" ng-repeat="voca in wordsInVessel">
       <p class="word" ng-repeat="unit in voca.pair">{{unit.word}}</p>
     </div>
+    -->
   </div>
 </div>
 
@@ -14,5 +30,5 @@
   <div class="container">
     <p>Vessel |
       <a href="https://github.com/ligeek">@ligeek</a>
-  </div>
-</footer>
+    </div>
+  </footer>
