@@ -17,8 +17,8 @@ angular.module('vesselApp').controller('MainCtrl', function ($scope, $http, sock
   $scope.wordBSelected = $scope.languages[1];
 
   // dev
-  $scope.wordA = 'Hello';
-  $scope.wordB = '안녕하세요';
+  //$scope.wordA = 'Hello';
+  //$scope.wordB = '안녕하세요';
   // end dev
 
   $scope.addWord = function() {

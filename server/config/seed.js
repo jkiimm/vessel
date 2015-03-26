@@ -49,24 +49,24 @@ User.find({}).remove(function() {
   );
 });
 
-Voca.find({}).remove(function() {
-  Voca.create({
-    pair: [{
-      word: 'hello', lang: 'en'
-    }, {
-      word: '안녕하세요', lang: 'ko'
-    }], 
-  }, {
-    pair: [{
-      word: 'get off', lang: 'en'
-    }, {
-      word: '떨어지다', lang: 'ko'
-    }], 
-  }, {
-    pair: [{
-      word: 'take', lang: 'en'
-    }, {
-      word: '타다', lang: 'ko'
-    }], 
-  });
-});
+//Voca.find({}).remove(function() {
+//  Voca.create({
+//    pair: [{
+//      word: 'hello', lang: 'en'
+//    }, {
+//      word: '안녕하세요', lang: 'ko'
+//    }], 
+//  }, {
+//    pair: [{
+//      word: 'get off', lang: 'en'
+//    }, {
+//      word: '떨어지다', lang: 'ko'
+//    }], 
+//  }, {
+//    pair: [{
+//      word: 'take', lang: 'en'
+//    }, {
+//      word: '타다', lang: 'ko'
+//    }], 
+//  });
+//});

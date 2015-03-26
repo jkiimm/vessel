@@ -398,7 +398,13 @@ module.exports = function (grunt) {
           remote: 'openshift',
           branch: 'master'
         }
-      }
+      },
+      ligeek_org: {
+        options: {
+          remote: 'ssh://ligeek@ligeek.org/home/ligeek/git/vessel.git',
+          branch: 'master'
+        }
+      },
     },
 
     // Run some tasks in parallel to speed up the build process
