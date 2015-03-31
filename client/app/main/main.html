@@ -1,6 +1,6 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container" ng-controller="MainCtrl">
+<div whenScrollEnds="loadMoreRecords()" class="container">
 
   <a role="button" id="go-stage" class="btn btn-default" href="/stage"><span class="glyphicon glyphicon-off"></span></a>
 
@@ -41,11 +41,20 @@
   <div class="jumbotron" ng-repeat="voca in wordsInVessel">
     <p class="word" ng-repeat="unit in voca.pair">{{unit.word}}</p>
   </div>
+  <!--
+  <div whenScrollEnds="loadMoreRecords()">
+    <div class="jumbotron" ng-repeat="stock in stockList">
+      <p>{{stock.dateValue}}</p>
+    </div>
+  </div>
+  -->
 </div>
 
+<!--
 <footer class="footer">
   <div class="container">
     <p>Vessel |
       <a href="https://github.com/ligeek">@ligeek</a>
   </div>
 </footer>
+-->

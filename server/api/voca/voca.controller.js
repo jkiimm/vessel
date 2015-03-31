@@ -14,7 +14,12 @@ var Voca = require('./voca.model');
 
 // Get list of vocas
 exports.index = function(req, res) {
-  Voca.find(function (err, vocas) {
+//  Voca.find(function (err, vocas) {
+//    if(err) { return handleError(res, err); }
+//    return res.json(200, vocas);
+//  });
+  Voca.find().skip(req.query.begin).limit(req.query.limit).exec(function(err, vocas) {
+    console.log(req.query, vocas);
     if(err) { return handleError(res, err); }
     return res.json(200, vocas);
   });
