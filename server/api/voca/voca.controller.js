@@ -19,7 +19,7 @@ exports.index = function(req, res) {
 //    return res.json(200, vocas);
 //  });
   Voca.find().skip(req.query.begin).limit(req.query.limit).exec(function(err, vocas) {
-    console.log(req.query, vocas);
+    //console.log(req.query, vocas);
     if(err) { return handleError(res, err); }
     return res.json(200, vocas);
   });
@@ -48,8 +48,8 @@ exports.update = function(req, res) {
   Voca.findById(req.params.id, function (err, voca) {
     if (err) { return handleError(res, err); }
     if(!voca) { return res.send(404); }
-    var updated = _.merge(voca, req.body);
-    updated.save(function (err) {
+    _.assign(voca, req.body);
+    voca.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.json(200, voca);
     });

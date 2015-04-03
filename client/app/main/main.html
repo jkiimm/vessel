@@ -34,27 +34,56 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="addWord()">추가</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="addVoca()">추가</button>
     </form>
   </div><!-- /.jumbotron -->
 
   <div class="jumbotron" ng-repeat="voca in wordsInVessel">
-    <p class="word" ng-repeat="unit in voca.pair">{{unit.word}}</p>
-  </div>
-  <!--
-  <div whenScrollEnds="loadMoreRecords()">
-    <div class="jumbotron" ng-repeat="stock in stockList">
-      <p>{{stock.dateValue}}</p>
+    <div class="read-block" ng-hide="voca.isEditable">
+      <p class="word" ng-repeat="unit in voca.pair">{{unit.word}}</p>
+      <button type="button" class="btn btn-default" ng-click="editVoca(voca)"><span class="glyphicon glyphicon-edit"></span></a>
+      <button type="button" class="btn btn-default" ng-click="delVoca(voca)"><span class="glyphicon glyphicon-remove"></span></a>
     </div>
+
+    <div class="edit-block" ng-show="voca.isEditable">
+      <form>
+        <div class="form-group">
+          <div class="text-left">
+            <label for="word-a">언어 A</label>
+          </div>
+          <div class="input-wrapper">
+            <select class="form-control" ng-model="wordASelected" ng-options="lang as lang.label for lang in languages">
+            </select>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" class="form-control" placeholder="단어를 입력하세요" ng-model="voca.pair[0].word">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="text-left">
+            <label for="word-b">언어 B</label>
+          </div>
+          <div class="input-wrapper">
+            <select class="form-control" ng-model="wordBSelected" ng-options="lang as lang.label for lang in languages">
+            </select>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" class="form-control" placeholder="단어를 입력하세요" ng-model="voca.pair[1].word">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg btn-block" ng-click="updateVoca(voca)">수정</button>
+        <button type="submit" class="btn btn-danger btn-lg btn-block" ng-click="cancelEdit(voca)">취소</button>
+      </form>
+    </div>
+
   </div>
-  -->
 </div>
 
-<!--
 <footer class="footer">
   <div class="container">
     <p>Vessel |
       <a href="https://github.com/ligeek">@ligeek</a>
-  </div>
-</footer>
--->
+    </div>
+  </footer>
