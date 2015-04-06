@@ -1,10 +1,10 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container" ng-controller="StageCtrl">
+<div class="container">
   <a role="button" id="quit-stage" class="btn btn-default" href="/"><span class="glyphicon glyphicon-log-out"></span></a>
 
   <div class="cards">
-    <div class="flip-container" ng-repeat="voca in wordsInVessel">
+    <div class="flip-container" ng-repeat="voca in stageVoca">
       <div class="flipper">
         <div class="face front">
           <div>
@@ -18,11 +18,6 @@
         </div>
       </div>
     </div>
-    <!--
-    <div class="jumbotron" ng-repeat="voca in wordsInVessel">
-      <p class="word" ng-repeat="unit in voca.pair">{{unit.word}}</p>
-    </div>
-    -->
   </div>
 </div>
 
